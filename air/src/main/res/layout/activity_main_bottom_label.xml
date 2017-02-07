@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+    <variable
+        name="presenter"
+        type="com.ramo.air.MainActivity.Presenter"></variable>
+</data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_alignParentBottom="true"
+    android:background="#e0000000"
+    android:orientation="horizontal"
+    android:paddingBottom="3dp"
+    android:paddingTop="3dp" >
+
+    <LinearLayout
+        android:onClick="@{presenter.onBottomTagClick}"
+        android:id="@+id/main_tab_Linear1"
+        style="@style/main_tab_Linear_ver" >
+
+        <ImageView
+            android:id="@+id/main_tab_iv1"
+            style="@style/main_tab_iv"
+            android:src="@drawable/ic_main_tab_air_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="空气质量" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:onClick="@{presenter.onBottomTagClick}"
+        android:id="@+id/main_tab_Linear2"
+        style="@style/main_tab_Linear_ver" >
+
+        <ImageView
+            android:id="@+id/main_tab_iv2"
+            style="@style/main_tab_iv"
+            android:src="@drawable/ic_main_tab_aqi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周边污染" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:onClick="@{presenter.onBottomTagClick}"
+        android:id="@+id/main_tab_Linear3"
+        style="@style/main_tab_Linear_ver" >
+
+        <ImageView
+            android:id="@+id/main_tab_iv3"
+            style="@style/main_tab_iv"
+            android:src="@drawable/ic_main_tab_aqi_rank" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全国排名" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:onClick="@{presenter.onBottomTagClick}"
+        android:id="@+id/main_tab_Linear4"
+        style="@style/main_tab_Linear_ver" >
+
+        <ImageView
+            android:id="@+id/main_tab_iv4"
+            style="@style/main_tab_iv"
+            android:src="@drawable/ic_main_tab_tucao" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实景吐槽" />
+    </LinearLayout>
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    style="@style/current_skin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp" >
+
+    <com.ramo.air.uicontrols.TopBar
+        android:id="@+id/top_bar"
+        style="@style/topbar_style"
+        android:layout_width="wrap_content"
+        topbar:leftBG="@drawable/topbar_left_bg" >
+
+        <TextView
+            style="@style/topbar_text"
+            android:text="环保法规" />
+    </com.ramo.air.uicontrols.TopBar>
+
+    <LinearLayout
+        style="@style/ep_infor_LL"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/shuoming1"
+            style="@style/ep_infor_img"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/shuoming1_bg" />
+
+        <ImageView
+            android:id="@+id/shuoming2"
+            style="@style/ep_infor_img"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:src="@drawable/shuoming2_bg" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/shuoming3"
+        style="@style/ep_infor_LL"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/shuoming3_bg" />
+
+    <LinearLayout
+        style="@style/ep_infor_LL"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/shuoming4"
+                style="@style/ep_infor_img"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2.5"
+                android:src="@drawable/shuoming4_bg" />
+
+            <ImageView
+                android:id="@+id/shuoming7"
+                style="@style/ep_infor_img"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/shuoming7_bg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                style="@style/ep_infor_img"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/shuoming5"
+                android:src="@drawable/shuoming5_bg" />
+
+            <ImageView
+                style="@style/ep_infor_img"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="7dp"
+                android:layout_weight="2"
+                android:id="@+id/shuoming6"
+                android:src="@drawable/shuoming6_bg" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ep_infor_LL"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="horizontal" >
+
+        <ImageView
+            style="@style/ep_infor_img"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+                android:id="@+id/shuoming8"
+            android:src="@drawable/shuoming8_bg" />
+
+        <ImageView
+            style="@style/ep_infor_img"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+                android:id="@+id/shuoming9"
+            android:src="@drawable/shuoming9_bg" />
+    </LinearLayout>
+
+</LinearLayout>

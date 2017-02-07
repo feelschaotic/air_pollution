@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="moni"
+            type="com.ramo.air.bean.NearMonitoring"></variable>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@android:color/transparent"
+        android:padding="5dp">
+
+      <TextView
+            style="@style/aqi_rank_cityname_style"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/aqi_moni_airnum"
+            android:layout_marginLeft="20dp"
+            android:text="@{moni.city}" />
+
+        <LinearLayout
+            android:id="@+id/air_moni_detailed"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/aqi_rank_provincename_style"
+                android:text="@{@string/Moni_PM25Hour + moni.PM25Hour+@string/Moni_unit}" />
+
+            <TextView
+                android:id="@+id/aqi_moni_PM25Day"
+                style="@style/aqi_rank_provincename_style"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/aqi_moni_airnum"
+                android:text="@{@string/Moni_PM25Day + moni.PM25Day+@string/Moni_unit}" />
+
+            <TextView
+                android:id="@+id/aqi_moni_PM10Hour"
+                style="@style/aqi_rank_provincename_style"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/aqi_moni_airnum"
+                android:text="@{@string/Moni_PM10Hour + moni.PM10Hour+@string/Moni_unit}" />
+        </LinearLayout>
+
+       <TextView
+            android:id="@+id/aqi_moni_airnum"
+            style="@style/wrap"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="50dp"
+            android:layout_toLeftOf="@id/air_moni_detailed"
+            android:background="@drawable/aqi_color_bg_1"
+            android:text="@{moni.AQI}"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+</layout>

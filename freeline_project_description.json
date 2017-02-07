@@ -1,0 +1,112 @@
+{
+    "android_gradle_plugin_version": "1.5.0",
+    "apk_path": "D:\\AndroidStudioWorkspace\\MyProject\\air\\build\\outputs\\apk\\air-debug.apk",
+    "apt": {
+        
+    },
+    "apt_libraries": {
+        "dagger": false,
+        "butterknife": false
+    },
+    "auto_dependency": true,
+    "build_cache_dir": "D:\\AndroidStudioWorkspace\\MyProject\\air\\build\\freeline",
+    "build_directory": "D:\\AndroidStudioWorkspace\\MyProject\\air\\build",
+    "build_script": "gradlew.bat :air:assembleDebug",
+    "build_script_work_directory": "",
+    "build_tools_directory": "D:\\adt-bundle-windows-x86\\sdk\\build-tools\\22.0.1",
+    "build_tools_version": "22.0.1",
+    "compile_sdk_directory": "D:\\adt-bundle-windows-x86\\sdk\\platforms\\android-23",
+    "compile_sdk_version": "android-23",
+    "databinding": [
+        {
+            "isLibrary": false,
+            "minSdkVersion": 16,
+            "name": "air",
+            "packageName": "com.ramo.air"
+        }
+    ],
+    "databinding_compiler_jar": "",
+    "databinding_modules": [
+        "air"
+    ],
+    "debug_package": "com.ramo.air",
+    "exclude_dep_res_paths": [
+        
+    ],
+    "extra_dep_res_paths": [
+        
+    ],
+    "freeline_cache_dir": "D:\\AndroidStudioWorkspace\\MyProject",
+    "freeline_gradle_plugin_version": "0.8.3",
+    "java_home": "D:\\jdk",
+    "launcher": "com.ramo.air.MainActivity",
+    "main_assets_directory": [
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\assets",
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\assets"
+    ],
+    "main_jniLibs_directory": [
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\jniLibs",
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\libs"
+    ],
+    "main_jni_directory": [
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\jni",
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\jni"
+    ],
+    "main_manifest_path": "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\AndroidManifest.xml",
+    "main_project_dir": "air",
+    "main_project_name": "air",
+    "main_r_path": "D:\\AndroidStudioWorkspace\\MyProject\\air\\build\\generated\\source\\r\\debug\\R.java",
+    "main_res_directory": [
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\res",
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\res"
+    ],
+    "main_src_directory": [
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\java",
+        "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\java"
+    ],
+    "module_dependencies": {
+        "air": [
+            
+        ]
+    },
+    "modules": [
+        {
+            "name": "air",
+            "path": "D:\\AndroidStudioWorkspace\\MyProject\\air"
+        }
+    ],
+    "package": "com.ramo.air",
+    "product_flavor": "",
+    "project_source_sets": {
+        "air": {
+            "main_assets_directory": [
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\assets",
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\jniLibs",
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\libs"
+            ],
+            "main_jni_directory": [
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\jni",
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\res",
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\java",
+                "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\java"
+            ]
+        }
+    },
+    "project_type": "gradle",
+    "retrolambda": {
+        
+    },
+    "root_dir": "D:\\AndroidStudioWorkspace\\MyProject",
+    "sdk_directory": "D:\\adt-bundle-windows-x86\\sdk",
+    "use_jdk8": false
+}

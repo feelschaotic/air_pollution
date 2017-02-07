@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pollution_types">
+        <item>大气污染</item>
+        <item>尾气排放</item>
+        <item>餐厅油烟</item>
+        <item>工厂烟尘</item>
+        <item>工地</item>
+        <item>油气泄露</item>
+        <item>其他</item>
+    </string-array>
+
+</resources>

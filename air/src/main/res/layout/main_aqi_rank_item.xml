@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="airRank"
+            type="com.ramo.air.bean.AirRank"></variable>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/aqi_rank_provincename"
+            style="@style/aqi_rank_provincename_style"
+            android:text="@{airRank.level}" />
+
+        <TextView
+            android:id="@+id/aqi_rank_cityname"
+            style="@style/aqi_rank_cityname_style"
+            android:text="@{airRank.area}" />
+
+        <TextView
+            android:id="@+id/aqi_rank_num"
+            style="@style/aqi_rank_num_style"
+            android:text="221" />
+
+        <TextView
+            android:id="@+id/aqi_rank_airnum"
+            style="@style/aqi_rank_airnum_style"
+            android:text="@{airRank.quality+`    `+airRank.aqi}" />
+
+    </RelativeLayout>
+</layout>

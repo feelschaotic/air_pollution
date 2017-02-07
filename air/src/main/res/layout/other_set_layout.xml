@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    style="@style/current_skin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.ramo.air.uicontrols.TopBar
+        android:id="@+id/top_bar"
+        style="@style/topbar_style"
+        android:layout_width="wrap_content"
+        topbar:leftBG="@drawable/topbar_left_bg"
+        topbar:rightBG="@drawable/topbar_transparent_bg" >
+
+        <TextView
+            style="@style/topbar_text"
+            android:text="其他设置" />
+    </com.ramo.air.uicontrols.TopBar>
+
+    <ListView
+        android:id="@+id/other_set_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@android:color/transparent"
+        android:layout_margin="13dp"
+        android:background="@drawable/linearlayout"
+        android:divider="#999999"
+        android:dividerHeight="0.5dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp" >
+    </ListView>
+
+</LinearLayout>

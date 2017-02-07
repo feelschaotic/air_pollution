@@ -1,0 +1,263 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- 为Activity设置透明的背景 -->
+    <style name="AppTheme" parent="@android:style/Theme.NoTitleBar"></style>
+
+    <style name="wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="textwhite">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="textblack">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="textblackBold" parent="textblack">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Label">
+        <item name="android:textSize">19.0sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Label.Shadow" parent="@style/Label">
+        <item name="android:shadowColor">#88000000</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.5</item>
+    </style>
+
+    <style name="AppTheme.Transparent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="current_city_release_time">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:text">今天8：00发布</item>
+    </style>
+
+    <style name="current_city_other_air_data">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="current_city_other_air_data_num" parent="current_city_other_air_data">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="current_city_other_air_data_explain" parent="current_city_other_air_data">
+        <item name="android:textSize">9sp</item>
+    </style>
+    <!-- 出行建议 -->
+    <style name="current_city_advice" parent="current_city_other_air_data">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+    <!-- 刷新 -->
+    <style name="RefreshProgress">
+        <item name="android:maxWidth">48.0dip</item>
+        <item name="android:maxHeight">48.0dip</item>
+        <!-- <item name="android:indeterminateDrawable">
+             @drawable/resource_circle_progressbar_indeterminate
+         </item>-->
+        <item name="android:minWidth">48.0dip</item>
+        <item name="android:minHeight">48.0dip</item>
+    </style>
+
+    <!-- 首页底部标签 -->
+    <style name="main_tab_Linear_ver">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <!-- 首页底部ImageView -->
+    <style name="main_tab_iv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-- 当前天气皮肤 -->
+    <style name="current_skin">
+        <item name="android:background">@drawable/bg_cloudy_night</item>
+    </style>
+
+    <!-- end 当前天气皮肤 -->
+
+
+    <!-- 全国天气排名页面的style -->
+    <style name="aqi_rank_num_style" parent="wrap">
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">28dp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="aqi_rank_airnum_style" parent="wrap">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/aqi_official_bg_2</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="aqi_rank_cityname_style" parent="wrap">
+        <!-- <item name="android:layout_above">@+id/aqi_rank_provincename</item>-->
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="aqi_rank_provincename_style" parent="wrap">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- end 全国天气排名页面的style -->
+
+
+    <!-- topbar样式 -->
+    <style name="topbar_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+    <!-- topbar文字样式 -->
+    <style name="topbar_text" parent="wrap">
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- 细横线 -->
+    <style name="hr">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">0.1dp</item>
+        <item name="android:background">#696969</item>
+        <item name="android:alpha">0.7</item>
+    </style>
+
+    <!-- 细竖线 -->
+    <style name="line_h">
+        <item name="android:background">#ffcdcdcd</item>
+        <item name="android:layout_width">0.5dip</item>
+        <item name="android:layout_height">100dip</item>
+        <item name="android:layout_marginLeft">0.0dip</item>
+        <item name="android:layout_marginRight">0.0dip</item>
+    </style>
+    <!-- 粗线 -->
+    <style name="line_big">
+        <item name="android:background">#EEEEEE</item>
+        <item name="android:layout_width">350dip</item>
+        <item name="android:layout_height">1dip</item>
+        <item name="android:layout_marginTop">5.0dip</item>
+        <item name="android:layout_marginBottom">5.0dip</item>
+    </style>
+
+    <style name="line_big2">
+        <item name="android:background">#EEEEEE</item>
+        <item name="android:layout_width">1dip</item>
+        <item name="android:layout_height">95dip</item>
+        <item name="android:layout_marginLeft">5.0dip</item>
+        <item name="android:layout_marginRight">15dip</item>
+    </style>
+
+    <style name="ep_infor_img">
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="ep_infor_LL">
+        <item name="android:clickable">true</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="leftNav">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textColor">#f0f0f0</item>
+    </style>
+
+    <style name="leftNavName" parent="leftNav">
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_toRightOf">@id/left_nav_head</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="leftNavLevel" parent="leftNav">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="leftNavMenuText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:textColor">#f0f0f0</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="leftNavHr">
+        <item name="android:background">#696969</item>
+        <item name="android:alpha">0.8</item>
+    </style>
+
+    <style name="leftNavHrHorizontal" parent="leftNavHr">
+        <item name="android:layout_width">220dp</item>
+        <item name="android:layout_height">1.2px</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="leftNavMenuImage">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <style name="leftNavHead">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginLeft">25dp</item>
+    </style>
+
+</resources>

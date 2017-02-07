@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/query_report_et"
+            android:layout_width="fill_parent"
+            android:layout_height="38.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/bg_search1"
+            android:completionThreshold="1"
+            android:dropDownHorizontalOffset="34.0dip"
+            android:dropDownVerticalOffset="0.0dip"
+            android:dropDownWidth="240.0dip"
+            android:gravity="left|center"
+            android:hint="输入想搜索的投诉（时间/地名）"
+            android:paddingRight="35.0dip"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textColorHint="#ffaeb8c2"
+            android:textSize="15.0sp" />
+
+        <ScrollView
+            android:id="@+id/layout4_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/query_report_et"
+            android:paddingBottom="60dp"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.ramo.air.uicontrols.FlowLayout
+                    android:id="@+id/submit_flowLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

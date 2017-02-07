@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp" >
+
+    <ImageView
+        android:id="@+id/scene_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/demo3" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#e0000000"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/scene_time"
+            style="@style/wrap"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="6小时前"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/scene_review"
+            style="@style/wrap"
+            android:layout_alignParentTop="true"
+          	 android:maxLines="2"
+            android:text="陕西西安市雁塔区丈八五路 陕西西安市雁塔区丈八五路 空气好差"
+            android:textColor="@android:color/white"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/scene_address"
+            style="@style/wrap"
+            android:layout_above="@id/scene_time"
+            android:layout_alignParentRight="true"
+            android:text="陕西西安市雁塔区丈八五路"
+            android:singleLine="true"
+            android:textSize="8sp" />
+
+        <ImageView
+            android:id="@+id/submit_like_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/scene_review"
+            android:layout_below="@+id/scene_address"
+            android:src="@drawable/special_xin_normal" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

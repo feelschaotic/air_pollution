@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:columnWidth="45dp"
+    android:numColumns="auto_fit"
+    android:stretchMode="columnWidth" >
+
+    <ImageView
+        android:id="@+id/moji_text_9_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="faceClick"
+        android:src="@drawable/moji_text_9_black" />
+
+    <ImageView
+        android:id="@+id/moji_text_10_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="faceClick"
+        android:src="@drawable/moji_text_10_black" />
+
+    <ImageView
+        android:id="@+id/moji_text_11_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="faceClick"
+        android:src="@drawable/moji_text_11_black" />
+
+    <ImageView
+        android:id="@+id/moji_text_12_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="faceClick"
+        android:src="@drawable/moji_text_12_black" />
+
+    <ImageView
+        android:id="@+id/moji_text_13_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="faceClick"
+        android:src="@drawable/moji_text_13_black" />
+
+    <ImageView
+        android:id="@+id/moji_text_14_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="faceClick"
+        android:src="@drawable/moji_text_14_black" />
+
+    <ImageView
+        android:id="@+id/moji_text_15_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="faceClick"
+        android:src="@drawable/moji_text_15_black" />
+
+    <ImageView
+        android:id="@+id/moji_text_16_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="faceClick"
+        android:src="@drawable/moji_text_16_black" />
+
+    <ImageView
+        android:id="@+id/moji_text_delete_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="faceClick"
+        android:src="@drawable/moji_text_delete_black" />
+
+</GridLayout>

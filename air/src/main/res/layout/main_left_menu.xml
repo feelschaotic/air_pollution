@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircleImageView="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="presenter"
+        type="com.ramo.air.MainActivity.Presenter"/>
+</data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.ramo.air.uicontrols.CircleImageView
+            android:id="@+id/left_nav_head"
+            style="@style/leftNavHead"
+            android:src="@drawable/head"
+            CircleImageView:border_color="@color/white"
+            CircleImageView:border_width="2dp"
+            android:onClick="@{presenter.onHeadClick}"/>
+
+        <TextView
+            android:id="@+id/left_nav_Name"
+            style="@style/leftNavName"
+            android:text="江湖感觉乱" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/left_nav_level_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/left_nav_Name"
+            android:layout_below="@+id/left_nav_Name"
+            android:src="@drawable/personal_level" />
+
+        <TextView
+            android:id="@+id/left_nav_level"
+            style="@style/leftNavLevel"
+            android:layout_alignBottom="@+id/left_nav_level_iv"
+            android:layout_alignEnd="@+id/left_nav_Name"
+            android:text="普通用户" />
+    </LinearLayout>
+
+    <View style="@style/leftNavHrHorizontal" />
+
+
+    <RelativeLayout
+        android:onClick="@{presenter.onLeftMenuClick}"
+        android:id="@+id/left_menu_my_attentionRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/left_nav_my_community_iv1"
+            style="@style/leftNavMenuImage"
+            android:src="@drawable/ic_attention" />
+
+        <TextView
+            style="@style/leftNavMenuText"
+            android:layout_toRightOf="@id/left_nav_my_community_iv1"
+            android:text="我的关注" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:onClick="@{presenter.onLeftMenuClick}"
+        android:id="@+id/left_menu_my_reportRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/left_iv7"
+            style="@style/leftNavMenuImage"
+            android:src="@drawable/ic_report" />
+
+        <TextView
+            android:id="@+id/left_tv7"
+            style="@style/leftNavMenuText"
+            android:layout_toRightOf="@id/left_iv7"
+            android:text="我的举报" />
+    </RelativeLayout>
+
+    <View style="@style/leftNavHrHorizontal" />
+
+    <RelativeLayout
+        android:onClick="@{presenter.onLeftMenuClick}"
+        android:id="@+id/left_menu_ep_RL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ic_ep"
+            style="@style/leftNavMenuImage"
+            android:src="@drawable/ic_ep" />
+
+        <TextView
+            android:layout_toRightOf="@id/ic_ep"
+            style="@style/leftNavMenuText"
+            android:text="环保法规" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:onClick="@{presenter.onLeftMenuClick}"
+        android:id="@+id/left_menu_blowRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ic_blow"
+            style="@style/leftNavMenuImage"
+            android:src="@drawable/blow" />
+
+        <TextView
+            android:layout_toRightOf="@id/ic_blow"
+            style="@style/leftNavMenuText"
+            android:text="吹一吹" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:onClick="@{presenter.onLeftMenuClick}"
+        android:id="@+id/left_menu_scanRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ic_scan"
+            style="@style/leftNavMenuImage"
+            android:src="@drawable/scan" />
+
+        <TextView
+            android:layout_toRightOf="@id/ic_scan"
+            style="@style/leftNavMenuText"
+            android:text="扫一扫" />
+    </RelativeLayout>
+    <View style="@style/leftNavHrHorizontal" />
+    <RelativeLayout
+        android:onClick="@{presenter.onLeftMenuClick}"
+        android:id="@+id/left_menu_settingRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ic_set"
+            style="@style/leftNavMenuImage"
+            android:src="@drawable/rootblock_icon_set" />
+
+        <TextView
+            android:layout_toRightOf="@id/ic_set"
+            style="@style/leftNavMenuText"
+            android:text="设置" />
+    </RelativeLayout>
+</LinearLayout>
+</layout>

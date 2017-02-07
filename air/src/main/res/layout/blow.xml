@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/blow_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ScrollView
+        android:id="@+id/blow_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_shape"
+        android:scrollbars="none">
+
+        <ImageView
+            android:id="@+id/blow_bg_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blow_background"
+            android:scaleType="fitXY" />
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <ImageView
+            android:id="@+id/blow_haze_iv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/blow_haze" />
+
+        <TextView
+            android:id="@+id/blow_result_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blow_haze_iv"
+            android:layout_centerHorizontal="true"
+            android:text="5213米"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/blow_energy1"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"></RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/blow_begin_btn"
+        android:src="@drawable/blow_haze_tip" />
+
+    <Button
+        android:id="@+id/blow_begin_btn"
+        style="@style/textwhite"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_shape"
+        android:text="开始吹" />
+
+    <TextView
+        android:id="@+id/blow_tip_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/imageView1"
+        android:gravity="center"
+        android:text="对准麦克风使劲吹走雾霾吧"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/blow_result_LL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/blow_begin_btn"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="42dp">
+
+        <TextView
+            style="@style/textwhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您超越了" />
+
+        <TextView
+            android:id="@+id/blow_result_percentum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90%"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            style="@style/textwhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_centerHorizontal="true"
+            android:text="的环保卫士" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/blow_result_tv"
+        style="@style/textwhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:text="听说收集七人的吹“灰”之力,就可召唤晴天了!" />
+
+</RelativeLayout>

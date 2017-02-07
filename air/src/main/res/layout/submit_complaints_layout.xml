@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:topbar="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+<data>
+    <variable
+        name="location"
+        type="String"/>
+    <variable
+        name="presenter"
+        type="com.ramo.air.SubmitComplaintsActivity.Presenter"/>
+</data>
+<LinearLayout
+    style="@style/current_skin"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.ramo.air.uicontrols.TopBar
+        android:id="@+id/top_bar"
+        style="@style/topbar_style"
+        android:layout_width="wrap_content"
+        topbar:leftBG="@drawable/topbar_left_bg"
+        topbar:rightTextColor="#ffffff" >
+
+        <TextView
+            style="@style/topbar_text"
+            android:text="举报" />
+
+        <TextView
+            android:id="@+id/report_send"
+            android:onClick="@{presenter.onReportSendClick}"
+            style="@style/wrap"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="发送"
+            android:textColor="@android:color/white"
+            android:layout_marginRight="5dp" />
+    </com.ramo.air.uicontrols.TopBar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn_shape"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/report_content"
+            style="@style/textwhite"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:onClick="@{presenter.onReportContextClick}"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="关于现在的空气质量，您想说？"
+            android:inputType="textMultiLine">
+            <requestFocus android:layout_width="match_parent" />
+        </EditText>
+
+        <ImageView
+            android:id="@+id/report_face_btn"
+            android:onClick="@{presenter.onReportFaceBtnClick}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/emoji_tushetou" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/report_font_length"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="7dp"
+        android:gravity="right"
+        android:text="0/200" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_weight="0.3"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="请选择举报类型" />
+
+        <Spinner
+            android:id="@+id/report_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/pollution_types"
+            android:prompt="@string/submit_type" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_weight="0.3"
+        android:orientation="horizontal"
+        android:padding="8dp" >
+
+        <ImageView
+            android:id="@+id/report_img"
+            android:onClick="@{presenter.onReportImgClick}"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/camera_80" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="4"
+            android:background="#90DBDBDB"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:src="@drawable/tucao_location_bg" />
+
+            <TableLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="1"
+                android:stretchColumns="1" >
+
+                <TextView
+                    android:id="@+id/report_location"
+                    style="@style/textwhite"
+                    android:onClick="@{presenter.onReportLocationClick}"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="@{location??@string/location_wait}" />
+            </TableLayout>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/title_bar_seperator" />
+
+            <ImageView
+                android:id="@+id/delete_location"
+                android:onClick="@{presenter.onDeleteLocationClick}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/topbar_close_normal" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/report_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:background="#e0ffffff"
+        android:visibility="invisible" >
+    </android.support.v4.view.ViewPager>
+
+    <include
+        bind:presenter="@{presenter}"
+        android:id="@+id/submit_report_face_buttom"
+        layout="@layout/submit_report_face_buttom"
+       />
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="topBar">
+        <attr name="titleStr" format="string"></attr>
+        <attr name="titleSize" format="dimension"></attr>
+        <attr name="titleTextColors" format="color"></attr>
+        <attr name="leftText" format="string"></attr>
+        <attr name="leftBG" format="reference|color"></attr>
+        <attr name="rightText" format="string"></attr>
+        <attr name="rightBG" format="reference|color"></attr>
+        <attr name="rightTextColor" format="color"></attr>
+        <attr name="leftTextColor" format="color"></attr>
+        <attr name="BG" format="reference|color"></attr>
+    </declare-styleable>
+    
+     <declare-styleable name="WeatherTypefacedTextView">
+        <attr name="typeface" format="string" />
+    </declare-styleable>
+	
+      <declare-styleable name="ViewPager">
+        <attr name="orientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+    </declare-styleable>
+</resources>

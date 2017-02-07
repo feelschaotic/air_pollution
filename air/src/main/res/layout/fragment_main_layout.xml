@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="airResultParseBean"
+            type="com.ramo.air.jsonparsing.AirResultParseBean" />
+        <variable
+            name="airQuality"
+            type="com.ramo.air.bean.AirQuality" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/current_city_release_time"
+                style="@style/current_city_release_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:text="@{@string/release_time+airQuality.date}"
+                android:textSize="10sp"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal"
+                android:text="空气指数"
+                android:textColor="@android:color/white"
+                android:textSize="19sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/current_city_air_index"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{airQuality.AQI}"
+                android:textColor="@android:color/white"
+                android:textSize="100sp"></TextView>
+
+          <Button
+                android:id="@+id/current_city_air_quality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/aqi_color_bg_2"
+                android:text="@{@string/air_quality +airQuality.quality}"
+                android:textColor="@android:color/white" />
+
+              <TableLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="30sp"
+                 android:background="#3f000000"
+                 android:paddingBottom="5dp"
+                 android:paddingTop="5dp"
+                 android:stretchColumns="0,1,2,3,4">
+
+                 <TableRow
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content">
+
+                     <TextView
+                         style="@style/current_city_other_air_data"
+                         android:layout_width="wrap_content"
+                         android:layout_height="match_parent"
+                         android:text="PM2.5" />
+
+                     <TextView
+                         style="@style/current_city_other_air_data"
+                         android:layout_width="wrap_content"
+                         android:layout_height="match_parent"
+                         android:text="PM10" />
+
+                     <TextView
+                         style="@style/current_city_other_air_data"
+                         android:layout_width="wrap_content"
+                         android:layout_height="match_parent"
+                         android:text="O3" />
+
+                     <TextView
+                         style="@style/current_city_other_air_data"
+                         android:layout_width="wrap_content"
+                         android:text="SO2" />
+
+                     <TextView
+                         style="@style/current_city_other_air_data"
+                         android:text="NO2" />
+                 </TableRow>
+
+                 <TableRow
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content">
+
+                     <TextView
+                         style="@style/current_city_other_air_data_explain"
+                         android:text="入肺颗粒物" />
+
+                     <TextView
+                         style="@style/current_city_other_air_data_explain"
+                         android:text="可吸入颗粒物" />
+
+                     <TextView
+                         style="@style/current_city_other_air_data_explain"
+                         android:text="臭氧" />
+
+                     <TextView
+                         style="@style/current_city_other_air_data_explain"
+                         android:text="二氧化硫" />
+
+                     <TextView
+                         style="@style/current_city_other_air_data_explain"
+                         android:text="二氧化氮" />
+                 </TableRow>
+
+                 <TableRow
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="5dp">
+
+                     <TextView
+                         android:id="@+id/current_city_other_air_data_num1"
+                         style="@style/current_city_other_air_data_num"
+                         android:text="@{airQuality.pm25}" />
+
+                     <TextView
+                         android:id="@+id/current_city_other_air_data_num2"
+                         style="@style/current_city_other_air_data_num"
+                         android:text="@{airQuality.PM10}" />
+
+                     <TextView
+                         android:id="@+id/current_city_other_air_data_num3"
+                         style="@style/current_city_other_air_data_num"
+                         android:text="@{airQuality.O3}" />
+
+                     <TextView
+                         android:id="@+id/current_city_other_air_data_num4"
+                         style="@style/current_city_other_air_data_num"
+                         android:text="@{airQuality.SO2}" />
+
+                     <TextView
+                         android:id="@+id/current_city_other_air_data_num5"
+                         style="@style/current_city_other_air_data_num"
+                         android:text="@{airQuality.NO2}" />
+                 </TableRow>
+             </TableLayout>
+
+             <TableLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="10dp"
+                 android:background="#3f000000"
+                 android:paddingBottom="8dp"
+                 android:paddingTop="8dp"
+                 android:stretchColumns="0,1,2,3">
+
+                 <TableRow>
+
+                     <ImageView
+                         android:id="@+id/advice_iv_1"
+                         android:src="@{airQuality.isAQIMoreThanOneHundred? @drawable/ic_life_info_yundong_2 :@drawable/ic_life_info_yundong_1}" />
+
+                     <TextView
+                         android:id="@+id/advice_tv_1"
+                         style="@style/current_city_advice"
+                         android:layout_height="match_parent"
+                         android:text="@{airQuality.isAQIMoreThanOneHundred? @string/advice1_true:@string/advice1_false}" />
+
+                     <ImageView
+                         android:id="@+id/advice_iv_2"
+                         android:src="@{airQuality.isAQIMoreThanOneHundred? @drawable/ic_life_info_kouzhao_2 :@drawable/ic_life_info_kouzhao_1}" />
+
+                     <TextView
+                         android:id="@+id/advice_tv_2"
+                         style="@style/current_city_advice"
+                         android:layout_height="match_parent"
+                         android:text="@{airQuality.isAQIMoreThanOneHundred? @string/advice2_true:@string/advice2_false}" />
+                 </TableRow>
+
+                 <TableRow android:layout_marginTop="5dp">
+
+                     <ImageView
+                         android:id="@+id/advice_iv_3"
+                         android:src="@{airQuality.isAQIMoreThanOneHundred? @drawable/ic_life_info_window_2 :@drawable/ic_life_info_window_1}" />
+
+                     <TextView
+                         android:id="@+id/advice_tv_3"
+                         style="@style/current_city_advice"
+                         android:layout_height="match_parent"
+                         android:text="@{airQuality.isAQIMoreThanOneHundred? @string/advice3_true:@string/advice3_false}" />
+
+                     <ImageView
+                         android:id="@+id/advice_iv_4"
+                         android:src="@{airQuality.isAQIMoreThanOneHundred? @drawable/ic_life_info_device_2 :@drawable/ic_life_info_device_1}" />
+
+                     <TextView
+                         android:id="@+id/advice_tv_4"
+                         style="@style/current_city_advice"
+                         android:layout_height="match_parent"
+                         android:text="@{airQuality.isAQIMoreThanOneHundred? @string/advice4_true:@string/advice4_false}" />
+                 </TableRow>
+             </TableLayout>
+
+             <RelativeLayout
+                 android:id="@+id/line_rl"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="10dp"
+                 android:background="#3f000000"
+                 android:padding="5dp">
+
+                 <TextView
+                     style="@style/current_city_advice"
+                     android:text="空气趋势图" />
+
+                 <LinearLayout
+                     android:id="@+id/line"
+                     android:layout_width="match_parent"
+                     android:layout_height="300dp"
+                     android:layout_centerInParent="true"
+                     android:layout_marginTop="30dp"
+                     android:orientation="horizontal" />
+             </RelativeLayout>
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_marginTop="15dp"
+                 android:background="#3f000000"
+                 android:padding="5dp">
+
+                 <TextView
+                     style="@style/current_city_advice"
+                     android:text="污染地图"
+                     android:textColor="@android:color/white" />
+
+                 <WebView
+                     android:id="@+id/air_map"
+                     android:layout_width="match_parent"
+                     android:layout_height="300dp"
+                     android:layout_centerInParent="true"
+                     android:layout_marginTop="40dp" />
+             </RelativeLayout>
+
+             <android.support.v7.widget.RecyclerView
+                 android:id="@+id/mian_news_recyclerView"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+             </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
