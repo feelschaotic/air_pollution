@@ -17,3 +17,9 @@
 九、	环保法规展示，科普环保知识。   
 
 *注：该项目为练手项目，原先在eclipse环境下开发，本次属于二次开发，迁移到AS环境，并采用MVVM架构，所以有部分Activity因时间关系未分解完成*
+![](https://github.com/feelschaotic/air_pollution/blob/master/video/v1_begin.gif)  
+![](https://github.com/feelschaotic/air_pollution/blob/master/video/v2_report.gif)  
+![](https://github.com/feelschaotic/air_pollution/blob/master/video/v3_push.gif)  
+![](https://github.com/feelschaotic/air_pollution/blob/master/video/v4_person_center.gif)  
+![](https://github.com/feelschaotic/air_pollution/blob/master/video/v6_scan_game.gif)  
+
