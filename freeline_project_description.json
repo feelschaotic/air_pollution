@@ -39,7 +39,7 @@
     "freeline_cache_dir": "D:\\AndroidStudioWorkspace\\MyProject",
     "freeline_gradle_plugin_version": "0.8.3",
     "java_home": "D:\\jdk",
-    "launcher": "com.ramo.air.MainActivity",
+    "launcher": "",
     "main_assets_directory": [
         "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\assets",
         "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\assets"

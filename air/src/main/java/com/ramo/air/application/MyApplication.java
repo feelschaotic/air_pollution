@@ -5,7 +5,6 @@ import android.content.Context;
 
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
-import com.thinkland.sdk.android.JuheSDKInitializer;
 
 import cn.jpush.android.api.JPushInterface;
 
@@ -20,7 +19,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
-        JuheSDKInitializer.initialize(getApplicationContext());// 调用聚合数据的SDK
+//        JuheSDKInitializer.initialize(getApplicationContext());// 调用聚合数据的SDK
 
      //   SystemUtils.copyDB(this);// 程序第一次运行将数据库copy过去
         //推送

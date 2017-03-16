@@ -11,8 +11,8 @@ import android.view.View;
 
 import com.ramo.air.AirPollutionMapActivity;
 import com.ramo.air.BlowActivity;
+import com.ramo.air.CityManagerActivity;
 import com.ramo.air.EPInformationActivity;
-import com.ramo.air.ManagerCityActivity;
 import com.ramo.air.MyAttentionReportActivity;
 import com.ramo.air.MySubmitComplaintsActivity;
 import com.ramo.air.OtherSetActivity;
@@ -122,7 +122,7 @@ public class MainActivityPresenter {
                 Intent intent = null;
                 if (binding.currentCityViewPager.getCurrentItem() == 0) {
                     intent = new Intent(new Intent(context,
-                            ManagerCityActivity.class));
+                            CityManagerActivity.class));
                 } else if (binding.currentCityViewPager.getCurrentItem() == 2) {
                     intent = new Intent(context,
                             AirPollutionMapActivity.class);
@@ -151,8 +151,8 @@ public class MainActivityPresenter {
         binding.currentCityLocalcityname.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
-              /*  context.startActivity(new Intent(context,
-                        ManagerCityActivity.class));*/
+                context.startActivity(new Intent(context,
+                        CityManagerActivity.class));
             }
         });
 

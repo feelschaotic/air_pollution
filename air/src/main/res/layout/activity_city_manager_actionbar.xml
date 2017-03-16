@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:weather="http://schemas.android.com/apk/res-auto" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent" >
+
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dip"
+            android:src="@drawable/topbar_left_bg" />
+
+        <TextView
+            android:id="@+id/city_title"
+            style="@style/Label.Shadow"
+            
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="城市管理"
+            android:textColor="@android:color/white"
+            android:textSize="20.0sp" />
+
+        <ImageView
+            android:id="@+id/edit_city"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="8dip"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dip"
+            android:src="@drawable/topbar_my_city_edit"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/confirm_city"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="8dip"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dip"
+            android:src="@drawable/topbar_complete_selector"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/divider_line"
+            android:layout_width="1.0dip"
+            android:layout_height="20.0dip"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/confirm_city"
+            android:background="@drawable/line_parting"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/refresh_city"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/confirm_city"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dip"
+            android:src="@drawable/topbar_update_forecast_selector"
+            android:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/refresh_progress"
+            style="@style/RefreshProgress"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_toLeftOf="@id/confirm_city"
+            android:clickable="true"
+            android:focusable="true"
+            android:indeterminate="true"
+            android:minHeight="24dp"
+            android:minWidth="24dp"
+            android:padding="12dip"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</merge>
