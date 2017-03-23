@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,7 +25,6 @@ import com.ramo.air.jsonparsing.AirResultParseBean;
 import com.ramo.air.listener.HttpCallbackListener;
 import com.ramo.air.presenter.MainFragmentPresenter;
 import com.ramo.air.utils.Constants;
-import com.ramo.air.utils.DateUtil;
 import com.ramo.air.utils.L;
 import com.ramo.air.utils.MyPreferenceUtils;
 import com.ramo.air.utils.NetUtils;
@@ -38,7 +36,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,20 +50,29 @@ public class MainFragment extends Fragment {
     private static String dataStrings[];
     private double[] aqiDoubles;
     private MainFragmentPresenter mainFragmentPresenter;
-    private AirQuality air_composition;
+
     private LineViewListener lineViewListener;
 
     private Handler cityChangeHandler = new Handler() {
+        AirResultParseBean airResultParseBean;
+        AirQuality air_composition;
+
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
-                    queryFromPreference();
-                    drawLine();
+                    airResultParseBean = (AirResultParseBean) msg.obj;
                     break;
-
+                case 3:
+                    air_composition = (AirQuality) msg.obj;
                 default:
                     T.shortShow(getContext(), getResources().getString(R.string.load_error));
                     break;
+            }
+            if (airResultParseBean != null && air_composition != null) {
+                airResultParseBean.setCitynow(air_composition);
+                MyPreferenceUtils.saveObject("air_quality", airResultParseBean);
+                queryFromPreference();
+                drawLine();
             }
         }
     };
@@ -119,8 +125,10 @@ public class MainFragment extends Fragment {
             queryCityFirst();
 
         } else {
-            binding.setAirQuality(air.getCitynow());
-            drawLine();
+            if (air.getCitynow() != null) {
+                binding.setAirQuality(air.getCitynow());
+                drawLine();
+            }
         }
 
     }
@@ -209,6 +217,8 @@ public class MainFragment extends Fragment {
 
     }
 
+    AirResultParseBean airResultParseBean;
+
     public void queryFromServer(String cityName) {
         // 先查询城市的未来几天空气趋势
         Map map = new HashMap<String, String>();
@@ -225,11 +235,10 @@ public class MainFragment extends Fragment {
                         AirParseBean airParse = gson.fromJson(response,
                                 AirParseBean.class);
                         if (airParse.getResultcode().equals("200")) {
-                            AirResultParseBean airResultParseBean = airParse.getResult().get(0);
-                            airResultParseBean.setCitynow(air_composition);
-                            MyPreferenceUtils.saveObject("air_quality", airResultParseBean);
-                            L.e("空气质量 resultcode==200");
-                            cityChangeHandler.sendEmptyMessage(1);
+                            Message msg = new Message();
+                            msg.obj = airParse.getResult().get(0);
+                            msg.what = 1;
+                            cityChangeHandler.sendMessage(msg);
                         } else {
                             cityChangeHandler.sendEmptyMessage(0);
                         }
@@ -252,11 +261,10 @@ public class MainFragment extends Fragment {
                             jsonObject = new JSONObject(response);
                             if (jsonObject.getString("resultcode")
                                     .equals("200")) {
-
                                 JSONArray result = jsonObject
                                         .getJSONArray("result");
                                 JSONObject obj = result.getJSONObject(0);
-                                air_composition = new AirQuality();
+                                AirQuality air_composition = new AirQuality();
                                 air_composition.setCity(obj.getString("city"));
                                 air_composition.setPm25(obj.getString("PM2.5"));
                                 air_composition.setAQI(obj.getString("AQI"));
@@ -267,11 +275,15 @@ public class MainFragment extends Fragment {
                                 air_composition.setNO2(obj.getString("NO2"));
                                 air_composition.setSO2(obj.getString("SO2"));
                                 air_composition.setO3(obj.getString("O3"));
-                                air_composition.setDate(DateUtil.getTimeFormatText(new Date(obj.getString("time"))));
+                                // air_composition.setDate(DateUtil.getTimeFormatText(new Date(obj.getString("time"))));
+                                air_composition.setDate("一个小时前");
                                 binding.setAirQuality(air_composition);
-
+                                Message msg = new Message();
+                                msg.what = 3;
+                                msg.obj = air_composition;
+                                cityChangeHandler.sendMessage(msg);
                             } else {
-                                Log.e("juhe 空气含量", "获取失败");
+                                L.e("获取失败");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

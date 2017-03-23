@@ -46,8 +46,8 @@ public class MainActivityPresenter {
         this.binding = binding;
         this.context = context;
         air_composition = new AirQuality();
-        air_composition.setAQI("123");
-        air_composition.setQuality("liang");
+        air_composition.setAQI("98");
+        air_composition.setQuality("良");
     }
 
     private void setTab(int i) {
@@ -191,7 +191,7 @@ public class MainActivityPresenter {
         else
             shareMyCityMoniDataNull(share);
         File externalStorageDirectory = Environment.getExternalStorageDirectory();
-        share.setImagePath(externalStorageDirectory.getPath() + "/Download/demo.png");
+        share.setImagePath(externalStorageDirectory.getPath() + "/Download/demo2.png");
         // 显示分享列表
         share.show(context);
     }

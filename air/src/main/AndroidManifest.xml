@@ -27,24 +27,27 @@
         <activity android:name=".LineActivity" />
         <activity android:name=".AirPollutionMapActivity" />
         <activity android:name=".SubmitMapActivity" />
-        <activity android:name=".SubmitComplaintsActivity"/>
+        <activity android:name=".SubmitComplaintsActivity" />
         <activity android:name=".RealNameActivtiy" />
         <activity android:name=".ScanActivity" />
         <activity android:name=".ScanBeforeActivity" />
         <activity android:name=".ScanActivityAddTags" />
         <activity android:name=".ScanActivityTagsShow" />
         <activity android:name=".BlowActivity">
-           <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>-->
         </activity>
         <activity android:name=".CityManagerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--  <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>-->
         </activity>
+
+        <activity android:name=".CityBaseActivity" />
+        <activity android:name=".CityQueryActivity" />
         <activity android:name=".EPInformationActivity" />
         <activity android:name=".EPInformationDetailedActivity" />
         <activity android:name=".OtherSetActivity" />

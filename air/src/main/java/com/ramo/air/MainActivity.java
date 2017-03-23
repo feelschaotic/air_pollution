@@ -22,7 +22,6 @@ import com.ramo.air.fragment.MyFragmentPagerAdapter;
 import com.ramo.air.fragment.SurroundingPollutionFragment;
 import com.ramo.air.presenter.MainActivityPresenter;
 import com.ramo.air.receiver.MessageReceiver;
-import com.ramo.air.utils.ActivityResultExtras;
 import com.ramo.air.utils.MyPreferenceUtils;
 import com.ramo.air.utils.PreferenceKeyName;
 import com.ramo.air.utils.T;
@@ -44,6 +43,7 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
     private MyFragmentPagerAdapter mFragmentPagerAdapter;
     private List<Fragment> fragmentList;
     private LocationManager locationManager;
+    private String nowCity = null;
     private Handler handlerGeo = new Handler() {
 
         public void handleMessage(Message msg) {
@@ -54,9 +54,17 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
                 case 1:
                     try {
                         String cityName = ((JSONObject) msg.obj).getJSONObject("addressComponent").getString("city");
-                        binding.currentCityLocalcityname.setText(cityName);
-                        MyPreferenceUtils.saveObject(PreferenceKeyName.CITY_NAME, cityName);
+
+                        if (nowCity != null) {
+                            MyPreferenceUtils.saveObject(PreferenceKeyName.CITY_NAME, nowCity);
+                            binding.currentCityLocalcityname.setText(nowCity);
+                        } else {
+                            MyPreferenceUtils.saveObject(PreferenceKeyName.CITY_NAME, cityName);
+                            binding.currentCityLocalcityname.setText(cityName);
+                        }
+
                         frame1.initData();
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -73,7 +81,13 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
         super.onCreate(savedInstanceState);
         binding = (ActivityMainLayoutBinding) DataBindingUtil.setContentView(this, R.layout.activity_main_layout);
         binding.setPresenter(new Presenter());
+        Intent intent = getIntent();
+        if (intent != null) {
+            nowCity = intent.getStringExtra("cityName");
+        }
+
         init();
+
     }
 
 
@@ -113,7 +127,11 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
         fragmentList = new ArrayList<>();
 
         frame1 = new MainFragment();
+
         frame1.setLineViewListener(this);
+        if (nowCity != null)
+            frame1.initData();
+
         Fragment frame2 = new SurroundingPollutionFragment();
         Fragment frame3 = new AirRankFragment();
         Fragment frame4 = new AllReportFragment();
@@ -123,7 +141,11 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
         fragmentList.add(frame3);
         fragmentList.add(frame4);
 
-        mFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList);
+        mFragmentPagerAdapter = new
+
+                MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList
+
+        );
         binding.currentCityViewPager.setAdapter(mFragmentPagerAdapter);
 
         initEvent();
@@ -227,13 +249,6 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
                 in.setClass(MainActivity.this,
                         SubmitComplaintsActivity.class);
                 startActivity(in);
-                break;
-            case ActivityResultExtras.CITY_CHANGE:
-                if (data != null) {
-                    Bundle extras = data.getExtras();
-                    binding.currentCityLocalcityname.setText(extras.getString("cityName"));
-                    mFragmentPagerAdapter.setFragments(fragmentList);
-                }
                 break;
             default:
                 break;

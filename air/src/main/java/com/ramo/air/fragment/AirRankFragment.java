@@ -21,12 +21,13 @@ import com.ramo.air.bean.AirRank;
 import com.ramo.air.collection.SortByAirNum;
 import com.ramo.air.collection.SortByAirNumDesc;
 import com.ramo.air.databinding.FragmentAirRankLayoutBinding;
-import com.ramo.air.jsonparsing.AirResultParseBean;
 import com.ramo.air.listener.HttpCallbackListener;
 import com.ramo.air.utils.Constants;
 import com.ramo.air.utils.DateUtil;
+import com.ramo.air.utils.L;
 import com.ramo.air.utils.MyPreferenceUtils;
 import com.ramo.air.utils.NetUtils;
+import com.ramo.air.utils.PreferenceKeyName;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -137,7 +138,7 @@ public class AirRankFragment extends Fragment implements SwipeRefreshLayout.OnRe
                     }
                 });
 
-         Collections.sort(airRanks, new SortByAirNum());
+        Collections.sort(airRanks, new SortByAirNum());
     }
 
     private void setListViewPos(int pos) {
@@ -151,11 +152,11 @@ public class AirRankFragment extends Fragment implements SwipeRefreshLayout.OnRe
 
     private void init() {
         binding.airRankListview.setSelected(true);
-		airRank=new AirRank();
-        airRank.setArea("汕头");
+        airRank = new AirRank();
+        airRank.setArea(queryCityFirst());
 /*        airRank.setArea(((AirResultParseBean) MyPreferenceUtils
-				.readObject("air_quality")).getCitynow().getCity());*/
-		airRanks = new ArrayList<AirRank>();
+                .readObject("air_quality")).getCitynow().getCity());*/
+        airRanks = new ArrayList<AirRank>();
         binding.airRankRefreshLayout.setColorScheme(
                 android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
@@ -163,6 +164,16 @@ public class AirRankFragment extends Fragment implements SwipeRefreshLayout.OnRe
                 android.R.color.holo_red_light);
         binding.airRankRefreshLayout.setOnRefreshListener(this);// 设置下拉的监听
 
+    }
+
+    private String queryCityFirst() {
+        //取出定位的城市
+        String cityName = (String) MyPreferenceUtils.readObject(PreferenceKeyName.CITY_NAME);
+        L.e(cityName);
+        if (cityName == null) {
+            return "汕头";
+        }
+        return cityName.substring(0,cityName.length()-1);
     }
 
     @Override
