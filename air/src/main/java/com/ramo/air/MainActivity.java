@@ -14,15 +14,20 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
+import com.ramo.air.bean.AirQuality;
 import com.ramo.air.databinding.ActivityMainLayoutBinding;
 import com.ramo.air.fragment.AirRankFragment;
 import com.ramo.air.fragment.AllReportFragment;
 import com.ramo.air.fragment.MainFragment;
 import com.ramo.air.fragment.MyFragmentPagerAdapter;
 import com.ramo.air.fragment.SurroundingPollutionFragment;
+import com.ramo.air.jsonparsing.AirResultParseBean;
 import com.ramo.air.presenter.MainActivityPresenter;
 import com.ramo.air.receiver.MessageReceiver;
+import com.ramo.air.utils.ActivityResultExtras;
+import com.ramo.air.utils.L;
 import com.ramo.air.utils.MyPreferenceUtils;
+import com.ramo.air.utils.NetWorkStatusUtil;
 import com.ramo.air.utils.PreferenceKeyName;
 import com.ramo.air.utils.T;
 
@@ -44,6 +49,8 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
     private List<Fragment> fragmentList;
     private LocationManager locationManager;
     private String nowCity = null;
+    private AirQuality citynow;
+
     private Handler handlerGeo = new Handler() {
 
         public void handleMessage(Message msg) {
@@ -81,6 +88,13 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
         super.onCreate(savedInstanceState);
         binding = (ActivityMainLayoutBinding) DataBindingUtil.setContentView(this, R.layout.activity_main_layout);
         binding.setPresenter(new Presenter());
+
+        AirResultParseBean air = (AirResultParseBean) MyPreferenceUtils.readObject("air_quality");
+        if (air != null) {
+            citynow = air.getCitynow();
+            binding.setAirQuality(citynow);
+        }
+
         Intent intent = getIntent();
         if (intent != null) {
             nowCity = intent.getStringExtra("cityName");
@@ -97,8 +111,13 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
         // 初始化推送
         registerMessageReceiver(); // used for receive msg
         mainActivityPresenter = new MainActivityPresenter(this, binding);
-        initLocation();
+        determineNetworkStatus();
         initView();
+    }
+
+    private void determineNetworkStatus() {
+        if (NetWorkStatusUtil.isNetworkConnected(this))
+            initLocation();
     }
 
     private void initLocation() {
@@ -124,13 +143,12 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
     MainFragment frame1;
 
     private void initView() {
+
         fragmentList = new ArrayList<>();
 
         frame1 = new MainFragment();
 
         frame1.setLineViewListener(this);
-        if (nowCity != null)
-            frame1.initData();
 
         Fragment frame2 = new SurroundingPollutionFragment();
         Fragment frame3 = new AirRankFragment();
@@ -249,6 +267,18 @@ public class MainActivity extends FragmentActivity implements MainFragment.LineV
                 in.setClass(MainActivity.this,
                         SubmitComplaintsActivity.class);
                 startActivity(in);
+                break;
+            case ActivityResultExtras.CITY_CHANGE:
+                String cityName = data.getStringExtra("cityName");
+                L.e("on activity result:" + cityName);
+                if (cityName != null) {
+                    binding.currentCityLocalcityname.setText(cityName);
+                    frame1.cityIsChange(cityName);
+                    //模拟数据
+                    if (citynow != null) {
+                        citynow.setAQI("146");
+                    }
+                }
                 break;
             default:
                 break;

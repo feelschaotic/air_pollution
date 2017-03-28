@@ -17,6 +17,12 @@
             android:value="JHae7cf1fd3f5c965dda643d3e34a89094" />
 
         <activity android:name=".MainActivity">
+          <!--  <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity android:name=".BeginAnimActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -34,11 +40,12 @@
         <activity android:name=".ScanActivityAddTags" />
         <activity android:name=".ScanActivityTagsShow" />
         <activity android:name=".BlowActivity">
-            <!-- <intent-filter>
+           <!--  <intent-filter>
                  <action android:name="android.intent.action.MAIN" />
                  <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>-->
         </activity>
+
         <activity android:name=".CityManagerActivity">
             <!--  <intent-filter>
                   <action android:name="android.intent.action.MAIN" />

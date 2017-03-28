@@ -20,6 +20,7 @@ public class AirQuality extends BaseObservable implements Serializable {
     private String O3;/* 臭氧 */
     private String SO2;/* 二氧化硫 */
     private String date;/* 更新时间 */
+    private boolean aQIMoreThanOneHundred = false;
     List<AirQuality> lastTwoWeeks = new ArrayList<AirQuality>();// 最近几天空气质量
     List<NearMonitoring> lastMoniData = new ArrayList<NearMonitoring>();// 最近的监测点
     private int color;
@@ -42,16 +43,14 @@ public class AirQuality extends BaseObservable implements Serializable {
         this.date = date;
     }
 
-    public boolean isAQIMoreThanOneHundred() {
-        return Integer.valueOf(this.AQI) >= 100;
+    @Bindable
+    public boolean getAQIMoreThanOneHundred() {
+        return aQIMoreThanOneHundred;
     }
 
-    public boolean isAQIMoreThanFifty() {
-        return Integer.valueOf(this.AQI) >= 50;
-    }
-
-    public boolean isAQIMoreThanSixty() {
-        return Integer.valueOf(this.AQI) >= 60;
+    public void setAQIMoreThanOneHundred(boolean b) {
+        aQIMoreThanOneHundred = b;
+        notifyPropertyChanged(BR.aQIMoreThanOneHundred);
     }
 
     @Bindable
@@ -81,6 +80,7 @@ public class AirQuality extends BaseObservable implements Serializable {
 
     public void setAQI(String aQI) {
         AQI = aQI;
+        setAQIMoreThanOneHundred(Integer.valueOf(this.AQI) >= 100);
         notifyPropertyChanged(BR.aQI);
     }
 

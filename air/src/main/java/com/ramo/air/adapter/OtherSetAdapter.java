@@ -66,6 +66,8 @@ public class OtherSetAdapter extends BaseAdapter {
                 holder.img.setVisibility(View.GONE);
                 if (position == 3)
                     holder.btn.setEnabled(false);
+                if(position==5)
+                    holder.btn.setChecked(true);
             } else {
                 holder.btn.setVisibility(View.GONE);
             }

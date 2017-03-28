@@ -19,6 +19,7 @@ import com.ramo.air.bean.AirQuality;
 import com.ramo.air.bean.City;
 import com.ramo.air.db.CityProvider;
 import com.ramo.air.uicontrols.DragSortGridView;
+import com.ramo.air.utils.ActivityResultExtras;
 import com.ramo.air.utils.L;
 import com.ramo.air.utils.NetUtils;
 
@@ -421,12 +422,9 @@ public class CityManagerActivity extends CityBaseActivity implements
 
                         @Override
                         public void onClick(View arg0) {
-
                             Intent in = new Intent();
-                            in.putExtra("cityName", mTmpCitys.get(position).getName()+"市");
-                            in.setClass(CityManagerActivity.this, MainActivity.class);
-                            startActivity(in);
-                          //  finish();
+                            in.putExtra("cityName", mTmpCitys.get(position).getName() + "市");
+                            setResult(ActivityResultExtras.CITY_CHANGE, in);
                             finish();
                         }
                     });

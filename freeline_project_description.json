@@ -1,13 +1,6 @@
 {
     "android_gradle_plugin_version": "1.5.0",
     "apk_path": "D:\\AndroidStudioWorkspace\\MyProject\\air\\build\\outputs\\apk\\air-debug.apk",
-    "apt": {
-        
-    },
-    "apt_libraries": {
-        "dagger": false,
-        "butterknife": false
-    },
     "auto_dependency": true,
     "build_cache_dir": "D:\\AndroidStudioWorkspace\\MyProject\\air\\build\\freeline",
     "build_directory": "D:\\AndroidStudioWorkspace\\MyProject\\air\\build",
@@ -25,7 +18,6 @@
             "packageName": "com.ramo.air"
         }
     ],
-    "databinding_compiler_jar": "",
     "databinding_modules": [
         "air"
     ],
@@ -39,7 +31,7 @@
     "freeline_cache_dir": "D:\\AndroidStudioWorkspace\\MyProject",
     "freeline_gradle_plugin_version": "0.8.3",
     "java_home": "D:\\jdk",
-    "launcher": "com.ramo.air.MainActivity",
+    "launcher": "com.ramo.air.BlowActivity2",
     "main_assets_directory": [
         "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\debug\\assets",
         "D:\\AndroidStudioWorkspace\\MyProject\\air\\src\\main\\assets"
@@ -103,9 +95,6 @@
         }
     },
     "project_type": "gradle",
-    "retrolambda": {
-        
-    },
     "root_dir": "D:\\AndroidStudioWorkspace\\MyProject",
     "sdk_directory": "D:\\adt-bundle-windows-x86\\sdk",
     "use_jdk8": false

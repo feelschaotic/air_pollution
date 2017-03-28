@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
@@ -82,7 +83,7 @@ public class BlowActivity extends Activity {
     private Runnable mScrollToBottom = new Runnable() {
         @Override
         public void run() {
-            scroll_height -= num / 9;
+            scroll_height -= num / 60;
             L.e("scroll_height:" + scroll_height);
             if (scroll_height > 0) {
                 blow_scrollview.scrollTo(0, scroll_height);
@@ -129,13 +130,13 @@ public class BlowActivity extends Activity {
 
     private void initEvent() {
         //禁止srcollview滚动
-        /*blow_scrollview.setOnTouchListener(new OnTouchListener() {
+        blow_scrollview.setOnTouchListener(new View.OnTouchListener() {
 			
 			@Override
 			public boolean onTouch(View arg0, MotionEvent arg1) {
 				return true;
 			}
-		});*/
+		});
         blow_begin_btn.setOnClickListener(new OnClickListener() {
 
 

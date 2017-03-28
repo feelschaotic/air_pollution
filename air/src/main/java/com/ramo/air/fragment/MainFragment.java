@@ -81,6 +81,27 @@ public class MainFragment extends Fragment {
         this.lineViewListener = listener;
     }
 
+    public void cityIsChange(String cityName) {
+        //测试数据
+        AirQuality citynow = air.getCitynow();
+        citynow.setCity(cityName);
+        citynow.setAQI("146");
+        citynow.setQuality("轻度污染");
+        citynow.setCO("50");
+        citynow.setSO2("45");
+        citynow.setNO2("30");
+        citynow.setPM10("32");
+        citynow.setPm25("61");
+        citynow.setO3("21");
+        changeColor(citynow.getColor());
+        changeBgSkin(citynow.getAQI());
+    }
+
+    private void changeBgSkin(String aqi) {
+        int aqiNum=Integer.parseInt(aqi);
+      //  if(aqiNum<50)
+    }
+
 
     public interface LineViewListener {
         void onLineViewTouch();
@@ -115,6 +136,9 @@ public class MainFragment extends Fragment {
                 startActivity(new Intent(getContext(), LineActivity.class));
             }
         });
+
+        if (getLocationCityFromPreference() != null)
+            initData();
     }
 
 
@@ -166,42 +190,44 @@ public class MainFragment extends Fragment {
 
     private void queryFromPreference() {
         air = (AirResultParseBean) MyPreferenceUtils.readObject("air_quality");
-
         if (air != null) {
             binding.setAirResultParseBean(air);
             if (air.getCitynow() != null) {
                 int color = air.getCitynow().getColor();
-
-                switch (color) {
-                    case 1:
-                        binding.currentCityAirQuality
-                                .setBackgroundResource(R.drawable.aqi_color_bg_1);
-                        break;
-                    case 2:
-                        binding.currentCityAirQuality
-                                .setBackgroundResource(R.drawable.aqi_color_bg_2);
-                        break;
-                    case 3:
-                        binding.currentCityAirQuality
-                                .setBackgroundResource(R.drawable.aqi_color_bg_3);
-                        break;
-                    case 4:
-                        binding.currentCityAirQuality
-                                .setBackgroundResource(R.drawable.aqi_color_bg_4);
-                        break;
-                    case 5:
-                        binding.currentCityAirQuality
-                                .setBackgroundResource(R.drawable.aqi_color_bg_5);
-                        break;
-                    default:
-                        binding.currentCityAirQuality
-                                .setBackgroundResource(R.drawable.aqi_color_bg_6);
-                        break;
-                }
-
+                changeColor(color);
+                changeBgSkin(air.getCitynow().getAQI());
             }
         }
 
+    }
+
+    private void changeColor(int color) {
+        switch (color) {
+            case 1:
+                binding.currentCityAirQuality
+                        .setBackgroundResource(R.drawable.aqi_color_bg_1);
+                break;
+            case 2:
+                binding.currentCityAirQuality
+                        .setBackgroundResource(R.drawable.aqi_color_bg_2);
+                break;
+            case 3:
+                binding.currentCityAirQuality
+                        .setBackgroundResource(R.drawable.aqi_color_bg_3);
+                break;
+            case 4:
+                binding.currentCityAirQuality
+                        .setBackgroundResource(R.drawable.aqi_color_bg_4);
+                break;
+            case 5:
+                binding.currentCityAirQuality
+                        .setBackgroundResource(R.drawable.aqi_color_bg_5);
+                break;
+            default:
+                binding.currentCityAirQuality
+                        .setBackgroundResource(R.drawable.aqi_color_bg_6);
+                break;
+        }
     }
 
     private void queryCityFirst() {
@@ -213,7 +239,6 @@ public class MainFragment extends Fragment {
         } else {
             queryFromServer(cityName);
         }
-        // L.e("查询到的 cityName:  "+cityName);
 
     }
 

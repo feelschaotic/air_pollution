@@ -28,7 +28,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:text="@{airQuality.date}"
-                android:textSize="10sp"></TextView>
+                android:textSize="10sp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -169,46 +169,46 @@
 
                      <ImageView
                          android:id="@+id/advice_iv_1"
-                         android:src="@{airQuality.isAQIMoreThanOneHundred? @drawable/ic_life_info_yundong_2 :@drawable/ic_life_info_yundong_1}" />
+                         android:src="@{airQuality.aQIMoreThanOneHundred? @drawable/ic_life_info_yundong_2 :@drawable/ic_life_info_yundong_1}" />
 
                      <TextView
                          android:id="@+id/advice_tv_1"
                          style="@style/current_city_advice"
                          android:layout_height="match_parent"
-                         android:text="@{airQuality.isAQIMoreThanOneHundred? @string/advice1_true:@string/advice1_false}" />
+                         android:text="@{airQuality.aQIMoreThanOneHundred? @string/advice1_true:@string/advice1_false}" />
 
                      <ImageView
                          android:id="@+id/advice_iv_2"
-                         android:src="@{airQuality.isAQIMoreThanOneHundred? @drawable/ic_life_info_kouzhao_2 :@drawable/ic_life_info_kouzhao_1}" />
+                         android:src="@{airQuality.aQIMoreThanOneHundred? @drawable/ic_life_info_kouzhao_2 :@drawable/ic_life_info_kouzhao_1}" />
 
                      <TextView
                          android:id="@+id/advice_tv_2"
                          style="@style/current_city_advice"
                          android:layout_height="match_parent"
-                         android:text="@{airQuality.isAQIMoreThanOneHundred? @string/advice2_true:@string/advice2_false}" />
+                         android:text="@{airQuality.aQIMoreThanOneHundred? @string/advice2_true:@string/advice2_false}" />
                  </TableRow>
 
                  <TableRow android:layout_marginTop="5dp">
 
                      <ImageView
                          android:id="@+id/advice_iv_3"
-                         android:src="@{airQuality.isAQIMoreThanOneHundred? @drawable/ic_life_info_window_2 :@drawable/ic_life_info_window_1}" />
+                         android:src="@{airQuality.aQIMoreThanOneHundred? @drawable/ic_life_info_window_2 :@drawable/ic_life_info_window_1}" />
 
                      <TextView
                          android:id="@+id/advice_tv_3"
                          style="@style/current_city_advice"
                          android:layout_height="match_parent"
-                         android:text="@{airQuality.isAQIMoreThanOneHundred? @string/advice3_true:@string/advice3_false}" />
+                         android:text="@{airQuality.aQIMoreThanOneHundred? @string/advice3_true:@string/advice3_false}" />
 
                      <ImageView
                          android:id="@+id/advice_iv_4"
-                         android:src="@{airQuality.isAQIMoreThanOneHundred? @drawable/ic_life_info_device_2 :@drawable/ic_life_info_device_1}" />
+                         android:src="@{airQuality.aQIMoreThanOneHundred? @drawable/ic_life_info_device_2 :@drawable/ic_life_info_device_1}" />
 
                      <TextView
                          android:id="@+id/advice_tv_4"
                          style="@style/current_city_advice"
                          android:layout_height="match_parent"
-                         android:text="@{airQuality.isAQIMoreThanOneHundred? @string/advice4_true:@string/advice4_false}" />
+                         android:text="@{airQuality.aQIMoreThanOneHundred? @string/advice4_true:@string/advice4_false}" />
                  </TableRow>
              </TableLayout>
 

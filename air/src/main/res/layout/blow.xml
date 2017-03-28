@@ -8,15 +8,14 @@
         android:id="@+id/blow_scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/text_shape"
         android:scrollbars="none">
 
         <ImageView
             android:id="@+id/blow_bg_iv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/blow_background"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:src="@drawable/blow_background" />
     </ScrollView>
 
     <RelativeLayout
